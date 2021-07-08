@@ -40,6 +40,20 @@ body {
     text-decoration: none;
 }
 
+#newGameButton {
+    text-align: center;
+}
+
+#choose {
+    text-align: center;
+}
+
+
+#shakeButton {
+    background-color: rgb(110, 119, 153);
+    text-align: center;
+}
+
 .buttonPrimaryDark:hover {
     color:  rgb(110, 119, 153);;
 }
@@ -63,22 +77,23 @@ body {
 h1 {
     margin: 0;
 }
-.invitationLinkField {
+.invitationCodeField {
     background-color: rgba(51, 65, 110, 0.7);
     border-radius: 10px;
     padding: 7px 5px;
     margin-bottom: 20px;
+    text-align: center;
 }
-#invitationLink {
+#invitationCode {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #D6CAB9;
     text-decoration: none;
     border: none;
     background-color: rgba(0, 0, 0, 0);
-    margin-left: 85px;
+    text-align: center;
 }
 
-#invitationLink::placeholder{
+#invitationCode::placeholder{
     color: #D6CAB9;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -149,11 +164,11 @@ h1 {
     transition: .4s transform ease-in-out;
 }
 
-#bottle:hover{
+#bottle.bottleTurn{
     transform: translateX(-50%) rotate(180deg);
 }
 
-#bottle:hover {
+#bottle.bottleShake{
     /* Start the shake animation and make the animation last for 0.5 seconds */
     animation: shake 0.5s; 
   
@@ -181,42 +196,42 @@ h1 {
     padding: 20px 30px;
 }
 
-.r1{
+#r1{
     background-image: url("img/captainKringelbartImg.jpg");
     background-size: 100%;
 }
 
-.r2{
+#r2{
     background-image: url("img/sollyImg.jpg");
     background-size: 100%;
 }
 
-.r3{
+#r3{
     background-image: url("img/holzbeinTimoImg.jpg");
     background-size: 100%;
 }
 
-.r4{
+#r4{
     background-image: url("img/poppyImg.jpg");
     background-size: 100%;
 }
 
-.r1Choosen{
+#r1.r1Choosen{
     background-image: url("img/captainKringelbartChoosenImg.jpg");
     background-size: 100%;
 }
 
-.r2Choosen{
+#r2.r2Choosen{
     background-image: url("img/sollyChoosenImg.jpg");
     background-size: 100%;
 }
 
-.r3Choosen{
+#r3.r3Choosen{
     background-image: url("img/holzbeinTimoChoosenImg.jpg");
     background-size: 100%;
 }
 
-.r4Choosen{
+#r4.r4Choosen{
     background-image: url("img/poppyChoosenImg.jpg");
     background-size: 100%;
 }

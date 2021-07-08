@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piratenspiel-Webanwendung</title>
+    <title>Pirat Escape Game bottle</title>
     <script src="main.js"></script>
+    <script src="bottle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
     <link rel="stylesheet" type="text/css" href="pirats.css"/>
+    <script language="JavaScript" src="../shared/DeviceMotionAndOrientationManager.js" defer></script>
 </head>
 <body>
 
@@ -17,6 +20,7 @@
             <h1>Flaschenpost</h1>
             <div class="contentContainer">
                 <p>Oh, wie toll! Ihr habt eine Flaschenpost gefunden. Schüttle dein Handy, um die Post aus der Flasche zu bewegen.</p>
+                <p id="shakeButton" class="buttonPrimary">Los geht´s!</p>
                 <svg id="bottle" width="100%" height="100%" viewBox="0 0 235 695" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
                     <g transform="matrix(1,0,0,1,2037.96,-368.809)">
                         <path d="M-2019.95,575.604C-2019.95,575.604 -2037.61,686.156 -2037.96,785.819C-2038.3,882.887 -2015.74,1041.31 -2015.74,1041.31C-2015.74,1041.31 -1952.51,1063.81 -1919.93,1063.65C-1887.36,1063.5 -1820.27,1040.39 -1820.27,1040.39C-1820.27,1040.39 -1804.31,881.249 -1803.92,784.251C-1803.5,683.742 -1823.55,578.081 -1823.55,578.081C-1823.55,578.081 -1871.44,538.229 -1880.55,514.693C-1890.97,487.743 -1890.66,410.893 -1890.66,410.893C-1890.66,410.893 -1917.17,413.67 -1929.6,413.682C-1942.02,413.694 -1963.88,410.222 -1963.88,410.222C-1963.88,410.222 -1959.63,488.382 -1969.06,516.748C-1977.9,543.372 -2019.95,575.604 -2019.95,575.604Z" style="fill:rgb(191,198,221);"/>
