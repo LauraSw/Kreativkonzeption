@@ -69,7 +69,7 @@ io.on('connection', (client:any) => {
 });
 
 function initGame  (){
-    story.html
+    
 }
 
 function emitGameState(roomName: any, state: any) {

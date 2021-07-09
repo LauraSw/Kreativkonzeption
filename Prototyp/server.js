@@ -53,7 +53,6 @@ exports.io.on('connection', (client) => {
     }
 });
 function initGame() {
-    story.html;
 }
 function emitGameState(roomName, state) {
     exports.io.sockets.in(roomName)
