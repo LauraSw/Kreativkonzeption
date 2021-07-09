@@ -1,10 +1,11 @@
 import { createServer } from "http";
 import { Server } from "socket.io";
+const io = new Server("'http://localhost:3000'");
+const socket = server.io;
 
 function makeid(length: any){
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwqyz0123456789';
-    //var charactersLength = characters.length;
     for ( var i = 0; i < length; i++) {
         result += characters.charAt(Math.floor(Math.random() * characters.length));
     
@@ -14,6 +15,16 @@ function makeid(length: any){
 const state = new Map<any, any>();
 const clientRooms = new Map<string, any>()
 export let clientNumber: any;
+
+const gameScreen: HTMLElement = document.getElementById('gameScreen') as HTMLElement;
+const initialScreen: HTMLElement = document.getElementById('initialScreen') as HTMLElement;
+const newGameButton: HTMLElement = document.getElementById('newGameButton') as HTMLElement;
+const joinGameButton: HTMLElement = document.getElementById('joinGameButton') as HTMLElement;
+const invitationCodeInput: HTMLInputElement = document.getElementById('invitationCode') as HTMLInputElement;
+
+newGameButton.addEventListener('click', newGame);
+joinGameButton.addEventListener('click', joinGame);
+
 
 const httpServer= createServer()
 export const io= new Server(httpServer);
@@ -38,14 +49,6 @@ io.on('connection', (client:any) => {
             numClients = Object.keys(allUsers).length;
         }
 
-        if (numClients === 0) {
-            client.emit('unknownGame');
-            return;
-         }else if (numClients > 1) {
-             client.emit('tooManyPlayers');
-             return;
-         }
-
          clientRooms.set(client.id, gameCode);
 
          client.join(gameCode);
@@ -68,14 +71,20 @@ io.on('connection', (client:any) => {
 
 });
 
-function initGame  (){
-    
+function joinGame (){
+    const gameCode = invitationCodeInput.value;
+    socket.emit('joinGame', gameCode);
+    initGame();
 }
 
-function emitGameState(roomName: any, state: any) {
+function newGame (){
+    socket.emit('newGame');
+    initGame();
+}
 
-    io.sockets.in(roomName)
-    .emit('gameState', JSON.stringify(state));
+function initGame  (){
+    initialScreen.style.display = "none";
+    gameScreen.style.display = "block";
 }
 
 
